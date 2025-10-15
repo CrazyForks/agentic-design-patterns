@@ -24,8 +24,8 @@
 | 第1章 | Prompt Chaining（提示链） | - | 已完成 | 2025-10-11 |
 | 第2章 | Routing（路由） | - | 已完成 | 2025-10-14 |
 | 第3章 | Parallelization（并行化） | - | 已完成 | 2025-10-14 |
-| 第4章 | Reflection（反思） | - | 待审核 | - |
-| 第5章 | Tool Use（工具使用） | - | 待审核 | - |
+| 第4章 | Reflection（反思） | - | 已完成 | 2025-10-15 |
+| 第5章 | Tool Use（工具使用） | - | 已完成 | 2025-10-15 |
 | 第6章 | Planning（规划） | - | 待审核 | - |
 | 第7章 | Multi-Agent Collaboration（多智能体协作） | - | 待审核 | - |
 | 第8章 | Memory Management（记忆管理） | - | 待审核 | - |
