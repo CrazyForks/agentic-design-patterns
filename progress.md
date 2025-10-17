@@ -26,11 +26,11 @@
 | 第3章 | Parallelization（并行化） | - | 已完成 | 2025-10-14 |
 | 第4章 | Reflection（反思） | - | 已完成 | 2025-10-15 |
 | 第5章 | Tool Use（工具使用） | - | 已完成 | 2025-10-15 |
-| 第6章 | Planning（规划） | - | 待审核 | - |
-| 第7章 | Multi-Agent Collaboration（多智能体协作） | - | 待审核 | - |
-| 第8章 | Memory Management（记忆管理） | - | 待审核 | - |
-| 第9章 | Learning and Adaptation（学习与适应） | - | 待审核 | - |
-| 第10章 | Model Context Protocol (MCP)（模型上下文协议） | - | 待审核 | - |
+| 第6章 | Planning（规划） | - | 已完成 | 2025-10-17 |
+| 第7章 | Multi-Agent Collaboration（多智能体协作） | 已完成 | 2025-10-17 | - |
+| 第8章 | Memory Management（记忆管理） | - | 已完成 | 2025-10-17 |
+| 第9章 | Learning and Adaptation（学习与适应） | - | 已完成 | 2025-10-17 |
+| 第10章 | Model Context Protocol (MCP)（模型上下文协议） | - | 已完成 | 2025-10-17 |
 | 第11章 | Goal Setting and Monitoring（目标设定与监控） | - | 待审核 | - |
 | 第12章 | Exception Handling and Recovery（异常处理与恢复） | - | 待审核 | - |
 | 第13章 | Human-in-the-Loop（人机协同） | - | 待审核 | - |
