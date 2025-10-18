@@ -433,10 +433,10 @@ LLM（如 Gemini）可以支持强大的、基于提示词的安全措施，如�
 
 实施有效的 guardrails 代表了对负责任的 AI 开发的核心承诺，超越了单纯的技术执行。这些安全模式的战略性应用使开发者能够构建既稳健又高效的智能 Agent，同时优先考虑可信度和有益结果。采用分层防御机制，整合从输入验证到人工监督的各种技术，可以产生一个对意外或有害输出具有弹性的系统。持续评估和改进这些 guardrails 对于适应不断演变的挑战并确保 Agent 系统的持久完整性至关重要。最终，精心设计的 guardrails 使 AI 能够以安全有效的方式服务于人类需求。
 
-## **参考文献**
+## 参考文献
 
-1. Google AI 安全原则：[https://ai.google/principles/](https://ai.google/principles/)
-2. OpenAI API 审核指南：[https://platform.openai.com/docs/guides/moderation](https://platform.openai.com/docs/guides/moderation)
-3. 提示词注入：[https://en.wikipedia.org/wiki/Prompt\_injection](https://en.wikipedia.org/wiki/Prompt_injection)
+1. Google AI Safety Principles: [https://ai.google/principles/](https://ai.google/principles/)
+2. OpenAI API Moderation Guide: [https://platform.openai.com/docs/guides/moderation](https://platform.openai.com/docs/guides/moderation)
+3. Prompt injection: [https://en.wikipedia.org/wiki/Prompt\_injection](https://en.wikipedia.org/wiki/Prompt_injection)
 
 [image1]: ../images/chapter-18/image1.png

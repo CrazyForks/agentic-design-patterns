@@ -31,9 +31,9 @@
 | 第8章 | Memory Management（记忆管理） | - | 已完成 | 2025-10-17 |
 | 第9章 | Learning and Adaptation（学习与适应） | - | 已完成 | 2025-10-17 |
 | 第10章 | Model Context Protocol (MCP)（模型上下文协议） | - | 已完成 | 2025-10-17 |
-| 第11章 | Goal Setting and Monitoring（目标设定与监控） | - | 待审核 | - |
-| 第12章 | Exception Handling and Recovery（异常处理与恢复） | - | 待审核 | - |
-| 第13章 | Human-in-the-Loop（人机协同） | - | 待审核 | - |
+| 第11章 | Goal Setting and Monitoring（目标设定与监控） | - | 已完成 | 2025-10-18 |
+| 第12章 | Exception Handling and Recovery（异常处理与恢复） | - | 已完成 | 2025-10-18 |
+| 第13章 | Human-in-the-Loop（人机协同） | - | 已完成 | 2025-10-18 |
 | 第14章 | Knowledge Retrieval (RAG)（知识检索） | - | 待审核 | - |
 | 第15章 | Inter-Agent Communication (A2A)（智能体间通信） | - | 待审核 | - |
 | 第16章 | Resource-Aware Optimization（资源感知优化） | - | 待审核 | - |
