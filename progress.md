@@ -34,11 +34,11 @@
 | 第11章 | Goal Setting and Monitoring（目标设定与监控） | - | 已完成 | 2025-10-18 |
 | 第12章 | Exception Handling and Recovery（异常处理与恢复） | - | 已完成 | 2025-10-18 |
 | 第13章 | Human-in-the-Loop（人机协同） | - | 已完成 | 2025-10-18 |
-| 第14章 | Knowledge Retrieval (RAG)（知识检索） | - | 待审核 | - |
-| 第15章 | Inter-Agent Communication (A2A)（智能体间通信） | - | 待审核 | - |
-| 第16章 | Resource-Aware Optimization（资源感知优化） | - | 待审核 | - |
-| 第17章 | Reasoning Techniques（推理技术） | - | 待审核 | - |
-| 第18章 | Guardrails/Safety Patterns（护栏/安全模式） | - | 待审核 | - |
+| 第14章 | Knowledge Retrieval (RAG)（知识检索） | - | 已完成 | 2025-10-19 |
+| 第15章 | Inter-Agent Communication (A2A)（智能体间通信） | - | 已完成 | 2025-10-19 |
+| 第16章 | Resource-Aware Optimization（资源感知优化） | - | 已完成 | 2025-10-19 |
+| 第17章 | Reasoning Techniques（推理技术） | - | 已完成 | 2025-10-19 |
+| 第18章 | Guardrails/Safety Patterns（护栏/安全模式） | - | 已完成 | 2025-10-19 |
 | 第19章 | Evaluation and Monitoring（评估与监控） | - | 待审核 | - |
 | 第20章 | Prioritization（优先级排序） | - | 待审核 | - |
 | 第21章 | Exploration and Discovery（探索与发现） | - | 待审核 | - |
