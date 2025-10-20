@@ -39,9 +39,9 @@
 | 第16章 | Resource-Aware Optimization（资源感知优化） | - | 已完成 | 2025-10-19 |
 | 第17章 | Reasoning Techniques（推理技术） | - | 已完成 | 2025-10-19 |
 | 第18章 | Guardrails/Safety Patterns（护栏/安全模式） | - | 已完成 | 2025-10-19 |
-| 第19章 | Evaluation and Monitoring（评估与监控） | - | 待审核 | - |
-| 第20章 | Prioritization（优先级排序） | - | 待审核 | - |
-| 第21章 | Exploration and Discovery（探索与发现） | - | 待审核 | - |
+| 第19章 | Evaluation and Monitoring（评估与监控） | - | 已完成 | 2025-10-20 |
+| 第20章 | Prioritization（优先级排序） | - | 已完成 | 2025-10-20 |
+| 第21章 | Exploration and Discovery（探索与发现） | - | 已完成 | 2025-10-20 |
 
 ## 附录详情
 

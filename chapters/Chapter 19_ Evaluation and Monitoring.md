@@ -78,7 +78,7 @@ input_t, output_t = monitor.get_total_tokens()
 print(f"总输入 tokens：{input_t}，总输出 tokens：{output_t}")
 ```
 
-本节介绍了一个概念性的 Python 类 `LLMInteractionMonitor`，旨在跟踪大型语言模型交互中的 token 使用量。该类包含输入和输出 token 的计数器。其 `record_interaction` 方法通过分割提示词和响应字符串来模拟 token 计数。在实际实现中，将使用特定的 LLM API tokenizer 进行精确的 token 计数。随着交互的发生，监视器累积总的输入和输出 token 计数。`get_total_tokens` 方法提供对这些累积总数的访问，这对于成本管理和 LLM 使用优化至关重要。
+本节介绍了一个概念性的 Python 类 `LLMInteractionMonitor`，旨在跟踪 LLM 交互中的 token 使用量。该类包含输入和输出 token 的计数器。其 `record_interaction` 方法通过分割提示词和响应字符串来模拟 token 计数。在实际实现中，将使用特定的 LLM API tokenizer 进行精确的 token 计数。随着交互的发生，监视器累积总的输入和输出 token 计数。`get_total_tokens` 方法提供对这些累积总数的访问，这对于成本管理和 LLM 使用优化至关重要。
 
 **使用 LLM-as-a-Judge 的"有用性"自定义指标：** 评估 AI Agent 的"有用性"等主观品质带来了超越标准客观指标的挑战。一个潜在的框架涉及使用 LLM 作为评估者。这种 LLM-as-a-Judge 方法根据预定义的"有用性"标准评估另一个 AI Agent 的输出。利用 LLM 的高级语言能力，此方法提供细微的、类人的主观品质评估，超越了简单的关键词匹配或基于规则的评估。虽然仍在发展中，但这项技术显示出自动化和扩展定性评估的前景。
 
