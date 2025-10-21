@@ -21,39 +21,39 @@
 
 | 章节 | 标题 | 翻译者 | 状态 | 更新日期 |
 |------|------|--------|------|----------|
-| 第1章 | Prompt Chaining（提示链） | - | 已完成 | 2025-10-11 |
+| 第1章 | Prompt Chaining（提示词链） | - | 已完成 | 2025-10-11 |
 | 第2章 | Routing（路由） | - | 已完成 | 2025-10-14 |
 | 第3章 | Parallelization（并行化） | - | 已完成 | 2025-10-14 |
 | 第4章 | Reflection（反思） | - | 已完成 | 2025-10-15 |
-| 第5章 | Tool Use（工具使用） | - | 已完成 | 2025-10-15 |
+| 第5章 | Tool Use（工具使用（函数调用）） | - | 已完成 | 2025-10-15 |
 | 第6章 | Planning（规划） | - | 已完成 | 2025-10-17 |
-| 第7章 | Multi-Agent Collaboration（多智能体协作） | 已完成 | 2025-10-17 | - |
+| 第7章 | Multi-Agent Collaboration（多 Agent 协作） | 已完成 | 2025-10-17 | - |
 | 第8章 | Memory Management（记忆管理） | - | 已完成 | 2025-10-17 |
-| 第9章 | Learning and Adaptation（学习与适应） | - | 已完成 | 2025-10-17 |
-| 第10章 | Model Context Protocol (MCP)（模型上下文协议） | - | 已完成 | 2025-10-17 |
-| 第11章 | Goal Setting and Monitoring（目标设定与监控） | - | 已完成 | 2025-10-18 |
-| 第12章 | Exception Handling and Recovery（异常处理与恢复） | - | 已完成 | 2025-10-18 |
+| 第9章 | Learning and Adaptation（学习和适应） | - | 已完成 | 2025-10-17 |
+| 第10章 | Model Context Protocol (MCP)（模型上下文协议 (MCP)） | - | 已完成 | 2025-10-17 |
+| 第11章 | Goal Setting and Monitoring（目标设定和监控） | - | 已完成 | 2025-10-18 |
+| 第12章 | Exception Handling and Recovery（异常处理和恢复） | - | 已完成 | 2025-10-18 |
 | 第13章 | Human-in-the-Loop（人机协同） | - | 已完成 | 2025-10-18 |
-| 第14章 | Knowledge Retrieval (RAG)（知识检索） | - | 已完成 | 2025-10-19 |
-| 第15章 | Inter-Agent Communication (A2A)（智能体间通信） | - | 已完成 | 2025-10-19 |
+| 第14章 | Knowledge Retrieval (RAG)（知识检索（RAG）） | - | 已完成 | 2025-10-19 |
+| 第15章 | Inter-Agent Communication (A2A)（Agent 间通信（A2A）） | - | 已完成 | 2025-10-19 |
 | 第16章 | Resource-Aware Optimization（资源感知优化） | - | 已完成 | 2025-10-19 |
 | 第17章 | Reasoning Techniques（推理技术） | - | 已完成 | 2025-10-19 |
-| 第18章 | Guardrails/Safety Patterns（护栏/安全模式） | - | 已完成 | 2025-10-19 |
-| 第19章 | Evaluation and Monitoring（评估与监控） | - | 已完成 | 2025-10-20 |
+| 第18章 | Guardrails/Safety Patterns（Guardrails/安全模式） | - | 已完成 | 2025-10-19 |
+| 第19章 | Evaluation and Monitoring（评估和监控） | - | 已完成 | 2025-10-20 |
 | 第20章 | Prioritization（优先级排序） | - | 已完成 | 2025-10-20 |
-| 第21章 | Exploration and Discovery（探索与发现） | - | 已完成 | 2025-10-20 |
+| 第21章 | Exploration and Discovery（探索和发现） | - | 已完成 | 2025-10-20 |
 
 ## 附录详情
 
 | 附录 | 标题 | 翻译者 | 状态 | 更新日期 |
 |------|------|--------|------|----------|
-| 附录A | Advanced Prompting Techniques（高级提示技术） | - | 已完成 | 2025-10-21 |
-| 附录B | AI Agentic Interactions: From GUI to Real world environment（AI智能体交互：从GUI到真实世界环境） | - | 已完成 | 2025-10-21 |
-| 附录C | Quick overview of Agentic Frameworks（智能体框架快速概览） | - | 已完成 | 2025-10-21 |
-| 附录D | Building an Agent with AgentSpace (on-line only)（使用AgentSpace构建智能体-仅在线） | - | 已完成 | 2025-10-21 |
-| 附录E | AI Agents on the CLI（命令行中的AI智能体） | - | 已完成 | 2025-10-21 |
-| 附录F | Under the Hood: An Inside Look at the Agents' Reasoning Engines（深入探究：智能体推理引擎内部） | - | 已完成 | 2025-10-21 |
-| 附录G | Coding agents（编码智能体） | - | 已完成 | 2025-10-21 |
+| 附录A | Advanced Prompting Techniques（高级提示工程技巧） | - | 已完成 | 2025-10-21 |
+| 附录B | AI Agentic Interactions: From GUI to Real world environment（AI智能体交互：从图形界面到现实世界环境） | - | 已完成 | 2025-10-21 |
+| 附录C | Quick overview of Agentic Frameworks（Agentic 框架快速概览） | - | 已完成 | 2025-10-21 |
+| 附录D | Building an Agent with AgentSpace (on-line only)（使用 AgentSpace 构建 Agent） | - | 已完成 | 2025-10-21 |
+| 附录E | AI Agents on the CLI（命令行界面中的 AI Agent） | - | 已完成 | 2025-10-21 |
+| 附录F | Under the Hood: An Inside Look at the Agents' Reasoning Engines（深入剖析：Agent 推理引擎的内部运作机制） | - | 已完成 | 2025-10-21 |
+| 附录G | Coding agents（编码 Agent） | - | 已完成 | 2025-10-21 |
 
 ## 状态说明
 
