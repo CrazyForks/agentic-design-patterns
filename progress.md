@@ -47,13 +47,13 @@
 
 | 附录 | 标题 | 翻译者 | 状态 | 更新日期 |
 |------|------|--------|------|----------|
-| 附录A | Advanced Prompting Techniques（高级提示技术） | - | 待审核 | - |
-| 附录B | AI Agentic Interactions: From GUI to Real world environment（AI智能体交互：从GUI到真实世界环境） | - | 待审核 | - |
-| 附录C | Quick overview of Agentic Frameworks（智能体框架快速概览） | - | 待审核 | - |
-| 附录D | Building an Agent with AgentSpace (on-line only)（使用AgentSpace构建智能体-仅在线） | - | 待审核 | - |
-| 附录E | AI Agents on the CLI（命令行中的AI智能体） | - | 待审核 | - |
-| 附录F | Under the Hood: An Inside Look at the Agents' Reasoning Engines（深入探究：智能体推理引擎内部） | - | 待审核 | - |
-| 附录G | Coding agents（编码智能体） | - | 待审核 | - |
+| 附录A | Advanced Prompting Techniques（高级提示技术） | - | 已完成 | 2025-10-21 |
+| 附录B | AI Agentic Interactions: From GUI to Real world environment（AI智能体交互：从GUI到真实世界环境） | - | 已完成 | 2025-10-21 |
+| 附录C | Quick overview of Agentic Frameworks（智能体框架快速概览） | - | 已完成 | 2025-10-21 |
+| 附录D | Building an Agent with AgentSpace (on-line only)（使用AgentSpace构建智能体-仅在线） | - | 已完成 | 2025-10-21 |
+| 附录E | AI Agents on the CLI（命令行中的AI智能体） | - | 已完成 | 2025-10-21 |
+| 附录F | Under the Hood: An Inside Look at the Agents' Reasoning Engines（深入探究：智能体推理引擎内部） | - | 已完成 | 2025-10-21 |
+| 附录G | Coding agents（编码智能体） | - | 已完成 | 2025-10-21 |
 
 ## 状态说明
 
