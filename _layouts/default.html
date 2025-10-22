@@ -133,6 +133,21 @@
       background-color: rgba(255, 255, 255, 0.2);
       border-color: rgba(255, 255, 255, 0.3);
     }
+
+    .language-toggle {
+      margin-bottom: 1rem;
+    }
+
+    .language-btn {
+      background-color: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
+      font-weight: 500;
+    }
+
+    .language-btn:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
     
     @media screen and (max-width: 768px) {
       .main-content {
@@ -153,6 +168,11 @@
   <header class="page-header" role="banner">
     <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
     <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+    <div class="language-toggle">
+      <button id="languageToggle" class="btn language-btn" data-current-lang="zh">
+        🌐 English / 中文
+      </button>
+    </div>
     {% if site.github.is_project_page %}
       <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
     {% endif %}
@@ -171,27 +191,86 @@
   </div>
 
   <script>
-    // Fix README markdown links to work with Jekyll
+    // Language toggle functionality
     document.addEventListener('DOMContentLoaded', function() {
-      const contentArea = document.querySelector('.content');
-      if (contentArea) {
-        const links = contentArea.querySelectorAll('a[href*=".md"]');
-        links.forEach(function(link) {
-          let href = link.getAttribute('href');
-          // Only process relative links to markdown files
-          if (href && !href.startsWith('http') && href.includes('.md')) {
-            // Remove .md extension
-            href = href.replace(/\.md$/, '');
-            // Decode URL encoded characters for cleaner URLs
-            href = decodeURIComponent(href);
-            // Ensure it starts with proper base path
-            if (!href.startsWith('/')) {
-              href = '/' + href;
-            }
-            link.setAttribute('href', '{{ site.baseurl }}' + href);
+      const languageToggle = document.getElementById('languageToggle');
+      const sidebar = document.querySelector('.sidebar nav');
+      
+      // Set initial language based on URL or default to Chinese
+      let currentLang = 'zh';
+      const urlParams = new URLSearchParams(window.location.search);
+      const langParam = urlParams.get('lang');
+      
+      if (langParam === 'en') {
+        currentLang = 'en';
+        updateLanguage('en');
+      }
+
+      // Add click event listener to toggle button
+      if (languageToggle) {
+        languageToggle.addEventListener('click', function() {
+          currentLang = currentLang === 'zh' ? 'en' : 'zh';
+          updateLanguage(currentLang);
+          
+          // Update URL without page reload
+          const newUrl = new URL(window.location);
+          if (currentLang === 'zh') {
+            newUrl.searchParams.delete('lang');
+          } else {
+            newUrl.searchParams.set('lang', 'en');
           }
+          window.history.replaceState({}, '', newUrl);
         });
       }
+
+      function updateLanguage(lang) {
+        // Update button text
+        if (languageToggle) {
+          languageToggle.textContent = lang === 'zh' ? '🌐 English / 中文' : '🌐 中文 / English';
+          languageToggle.setAttribute('data-current-lang', lang);
+        }
+
+        // Update navigation content
+        if (sidebar) {
+          fetch(`/_includes/navigation-${lang}.html`)
+            .then(response => response.text())
+            .then(html => {
+              sidebar.innerHTML = html;
+              
+              // Re-apply markdown link fixes after navigation update
+              fixMarkdownLinks();
+            })
+            .catch(error => {
+              console.error('Error loading navigation:', error);
+            });
+        }
+      }
+
+      // Fix README markdown links to work with Jekyll
+      function fixMarkdownLinks() {
+        const contentArea = document.querySelector('.content');
+        if (contentArea) {
+          const links = contentArea.querySelectorAll('a[href*=".md"]');
+          links.forEach(function(link) {
+            let href = link.getAttribute('href');
+            // Only process relative links to markdown files
+            if (href && !href.startsWith('http') && href.includes('.md')) {
+              // Remove .md extension
+              href = href.replace(/\.md$/, '');
+              // Decode URL encoded characters for cleaner URLs
+              href = decodeURIComponent(href);
+              // Ensure it starts with proper base path
+              if (!href.startsWith('/')) {
+                href = '/' + href;
+              }
+              link.setAttribute('href', '{{ site.baseurl }}' + href);
+            }
+          });
+        }
+      }
+
+      // Initial link fix
+      fixMarkdownLinks();
     });
   </script>
 
