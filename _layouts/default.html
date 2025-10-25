@@ -239,6 +239,9 @@
               
               // Re-apply markdown link fixes after navigation update
               fixMarkdownLinks();
+              
+              // Add language parameter to all navigation links
+              updateNavigationLinks(lang);
             })
             .catch(error => {
               console.error('Error loading navigation:', error);
@@ -269,8 +272,27 @@
         }
       }
 
+      // Update navigation links to preserve language parameter
+      function updateNavigationLinks(lang) {
+        const navLinks = document.querySelectorAll('.sidebar a');
+        navLinks.forEach(function(link) {
+          let href = link.getAttribute('href');
+          if (href && !href.startsWith('http')) {
+            // Remove any existing lang parameter
+            href = href.split('?')[0];
+            // Add lang parameter if not in Chinese mode
+            if (lang === 'en') {
+              href += '?lang=en';
+            }
+            link.setAttribute('href', href);
+          }
+        });
+      }
+
       // Initial link fix
       fixMarkdownLinks();
+      // Initial navigation links update
+      updateNavigationLinks(currentLang);
     });
   </script>
 
