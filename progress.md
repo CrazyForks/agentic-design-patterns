@@ -27,7 +27,7 @@
 | 第4章 | Reflection（反思） | - | 已完成 | 2025-10-15 |
 | 第5章 | Tool Use（工具使用（函数调用）） | - | 已完成 | 2025-10-15 |
 | 第6章 | Planning（规划） | - | 已完成 | 2025-10-17 |
-| 第7章 | Multi-Agent Collaboration（多 Agent 协作） | 已完成 | 2025-10-17 | - |
+| 第7章 | Multi-Agent Collaboration（多 Agent 协作）| - | 已完成 | 2025-10-17 |
 | 第8章 | Memory Management（记忆管理） | - | 已完成 | 2025-10-17 |
 | 第9章 | Learning and Adaptation（学习和适应） | - | 已完成 | 2025-10-17 |
 | 第10章 | Model Context Protocol (MCP)（模型上下文协议 (MCP)） | - | 已完成 | 2025-10-17 |
