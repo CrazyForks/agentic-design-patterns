@@ -180,8 +180,11 @@
 
   <div class="main-content">
     <aside class="sidebar">
-      <nav>
+      <nav id="nav-zh" class="navigation-content" style="display: block;">
         {% include navigation.html %}
+      </nav>
+      <nav id="nav-en" class="navigation-content" style="display: none;">
+        {% include navigation-en.html %}
       </nav>
     </aside>
     
@@ -194,7 +197,8 @@
     // Language toggle functionality
     document.addEventListener('DOMContentLoaded', function() {
       const languageToggle = document.getElementById('languageToggle');
-      const sidebar = document.querySelector('.sidebar nav');
+      const navZh = document.getElementById('nav-zh');
+      const navEn = document.getElementById('nav-en');
       
       // Set initial language based on URL or default to Chinese
       let currentLang = 'zh';
@@ -230,23 +234,19 @@
           languageToggle.setAttribute('data-current-lang', lang);
         }
 
-        // Update navigation content
-        if (sidebar) {
-          fetch(`/_includes/navigation-${lang}.html`)
-            .then(response => response.text())
-            .then(html => {
-              sidebar.innerHTML = html;
-              
-              // Re-apply markdown link fixes after navigation update
-              fixMarkdownLinks();
-              
-              // Add language parameter to all navigation links
-              updateNavigationLinks(lang);
-            })
-            .catch(error => {
-              console.error('Error loading navigation:', error);
-            });
+        // Toggle navigation visibility
+        if (navZh && navEn) {
+          if (lang === 'zh') {
+            navZh.style.display = 'block';
+            navEn.style.display = 'none';
+          } else {
+            navZh.style.display = 'none';
+            navEn.style.display = 'block';
+          }
         }
+        
+        // Update navigation links to preserve language parameter
+        updateNavigationLinks(lang);
       }
 
       // Fix README markdown links to work with Jekyll
