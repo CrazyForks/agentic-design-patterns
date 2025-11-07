@@ -8,7 +8,7 @@ agentic-design-patterns/
 ├── translation-guide.md     # 翻译指南
 ├── progress.md              # 翻译进度追踪
 ├── glossary.md              # 术语对照表
-├── TABLE_OF_CONTENTS.md     # 全书目录
+├── SUMMARY.md               # GitBook 目录文件
 ├── PROJECT_STRUCTURE.md     # 本文件 - 项目结构说明
 ├── .gitignore               # Git 忽略文件配置
 │
@@ -47,7 +47,7 @@ agentic-design-patterns/
 - **translation-guide.md**: 翻译指南，包括翻译原则、格式规范、术语对照
 - **progress.md**: 翻译进度追踪表，记录每章的翻译状态和负责人
 - **glossary.md**: 术语对照表，统一专业术语的翻译
-- **TABLE_OF_CONTENTS.md**: 全书目录，包含所有章节链接
+- **SUMMARY.md**: GitBook 目录文件，包含所有章节链接
 - **.gitignore**: Git 版本控制忽略文件配置
 
 ### 核心目录
