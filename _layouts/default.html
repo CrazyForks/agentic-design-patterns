@@ -18,23 +18,29 @@
     .page-header {
       background-color: #159957;
       background-image: linear-gradient(120deg, #155799, #159957);
-      padding: 3rem 1rem;
-      text-align: center;
+      padding: 0.5rem 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     
     .project-name {
       margin-top: 0;
-      margin-bottom: 0.1rem;
-      font-size: 2.5rem;
+      margin-bottom: 0;
+      font-size: 1.5rem;
       font-weight: bold;
       color: #fff;
     }
     
     .project-tagline {
-      margin-bottom: 2rem;
+      margin: 0;
       font-weight: normal;
-      opacity: 0.9;
-      font-size: 1.25rem;
+      opacity: 0.8;
+      font-size: 0.8rem;
       color: #fff;
     }
     
@@ -54,6 +60,26 @@
     .sidebar nav {
       position: sticky;
       top: 20px;
+      max-height: calc(100vh - 40px); /* Viewport height minus top offset and some padding */
+      overflow-y: auto;
+    }
+    
+    .post-nav {
+      margin-top: 3rem;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #eee;
+      padding-top: 1rem;
+    }
+    
+    .post-nav a {
+      color: #0366d6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    
+    .post-nav a:hover {
+      text-decoration: underline;
     }
     
     .sidebar h3 {
@@ -135,7 +161,7 @@
     }
 
     .language-toggle {
-      margin-bottom: 1rem;
+      margin-bottom: 0;
     }
 
     .language-btn {
@@ -147,6 +173,20 @@
     .language-btn:hover {
       background-color: rgba(255, 255, 255, 0.25);
       border-color: rgba(255, 255, 255, 0.4);
+    }
+    
+    .header-title {
+      text-align: left;
+    }
+    
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .page-header .btn {
+      margin-bottom: 0;
     }
     
     @media screen and (max-width: 768px) {
@@ -166,16 +206,20 @@
 </head>
 <body>
   <header class="page-header" role="banner">
-    <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
-    <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
-    <div class="language-toggle">
-      <button id="languageToggle" class="btn language-btn" data-current-lang="zh">
-        🌐 English / 中文
-      </button>
+    <div class="header-title">
+      <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
+      <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
     </div>
-    {% if site.github.is_project_page %}
-      <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
-    {% endif %}
+    <div class="header-controls">
+      <div class="language-toggle">
+        <button id="languageToggle" class="btn language-btn" data-current-lang="zh">
+          🌐 English / 中文
+        </button>
+      </div>
+      {% if site.github.is_project_page %}
+        <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
+      {% endif %}
+    </div>
   </header>
 
   <div class="main-content">
@@ -190,63 +234,125 @@
     
     <main class="content" role="main">
       {{ content }}
+
+      {%- if page.path contains 'original/' -%}
+        {%- assign pages = site.pages | where_exp: "item", "item.path contains 'original/'" | sort: "path" -%}
+      {%- else -%}
+        {%- assign pages = site.pages | where_exp: "item", "item.path contains 'chapters/'" | sort: "path" -%}
+      {%- endif -%}
+      {%- for page_item in pages -%}
+        {%- if page_item.url == page.url -%}
+          {%- assign current_index = forloop.index0 -%}
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- assign prev_index = current_index | minus: 1 -%}
+      {%- assign next_index = current_index | plus: 1 -%}
+
+      {%- if prev_index >= 0 -%}
+        {%- assign prev_page = pages[prev_index] -%}
+      {%- endif -%}
+
+      {%- if next_index < pages.size -%}
+        {%- assign next_page = pages[next_index] -%}
+      {%- endif -%}
+
+      {% if prev_page or next_page %}
+      <nav class="post-nav">
+        <div>
+          {% if prev_page %}
+            <a href="{{ prev_page.url | relative_url }}">
+              {% if page.path contains 'original/' %}
+                &laquo; Previous: {{ prev_page.title }}
+              {% else %}
+                &laquo; 上一章: {{ prev_page.title }}
+              {% endif %}
+            </a>
+          {% endif %}
+        </div>
+        <div>
+          {% if next_page %}
+            <a href="{{ next_page.url | relative_url }}">
+              {% if page.path contains 'original/' %}
+                Next: {{ next_page.title }} &raquo;
+              {% else %}
+                下一章: {{ next_page.title }} &raquo;
+              {% endif %}
+            </a>
+          {% endif %}
+        </div>
+      </nav>
+      {% endif %}
     </main>
   </div>
 
   <script>
     // Language toggle functionality
     document.addEventListener('DOMContentLoaded', function() {
+      const header = document.querySelector('.page-header');
+      const sidebarNav = document.querySelector('.sidebar nav');
+      if (header && sidebarNav) {
+        const updateSidebarNavTop = () => {
+          const headerHeight = header.offsetHeight;
+          sidebarNav.style.top = (headerHeight + 20) + 'px';
+          sidebarNav.style.maxHeight = `calc(100vh - ${headerHeight + 40}px)`;
+        };
+        updateSidebarNavTop();
+        window.addEventListener('resize', updateSidebarNavTop);
+      }
+
       const languageToggle = document.getElementById('languageToggle');
       const navZh = document.getElementById('nav-zh');
       const navEn = document.getElementById('nav-en');
-      
-      // Set initial language based on URL or default to Chinese
-      let currentLang = 'zh';
-      const urlParams = new URLSearchParams(window.location.search);
-      const langParam = urlParams.get('lang');
-      
-      if (langParam === 'en') {
-        currentLang = 'en';
-        updateLanguage('en');
+      const pathname = window.location.pathname;
+
+      // Determine current language from URL path
+      const isEnglish = pathname.startsWith('/original/');
+
+      // Set initial UI state based on language
+      if (isEnglish) {
+        navZh.style.display = 'none';
+        navEn.style.display = 'block';
+        languageToggle.textContent = '🌐 中文 / English';
+      } else {
+        navZh.style.display = 'block';
+        navEn.style.display = 'none';
+        languageToggle.textContent = '🌐 English / 中文';
       }
 
       // Add click event listener to toggle button
       if (languageToggle) {
         languageToggle.addEventListener('click', function() {
-          currentLang = currentLang === 'zh' ? 'en' : 'zh';
-          updateLanguage(currentLang);
-          
-          // Update URL without page reload
-          const newUrl = new URL(window.location);
-          if (currentLang === 'zh') {
-            newUrl.searchParams.delete('lang');
-          } else {
-            newUrl.searchParams.set('lang', 'en');
-          }
-          window.history.replaceState({}, '', newUrl);
+            const currentPath = window.location.pathname;
+            const isEnglish = currentPath.startsWith('/original/');
+            // Handle root path, which might be '/' or '/index.html'
+            const isRoot = currentPath === '/' || currentPath === '/index.html';
+
+            let newUrl;
+
+            if (isEnglish) {
+                // Switch to Chinese
+                if (currentPath === '/original/' || currentPath === '/original/index.html') {
+                    newUrl = '/';
+                } else {
+                    newUrl = currentPath.replace('/original/', '/chapters/');
+                }
+            } else {
+                // Switch to English
+                if (isRoot) {
+                    newUrl = '/original/';
+                } else {
+                    newUrl = currentPath.replace('/chapters/', '/original/');
+                }
+            }
+            
+            // If URL is unchanged (e.g. a non-content page like /CONTRIBUTING.html), go to the other language's homepage.
+            if (newUrl === currentPath) {
+               newUrl = isEnglish ? '/' : '/original/';
+            }
+
+            window.location.href = newUrl;
         });
-      }
-
-      function updateLanguage(lang) {
-        // Update button text
-        if (languageToggle) {
-          languageToggle.textContent = lang === 'zh' ? '🌐 English / 中文' : '🌐 中文 / English';
-          languageToggle.setAttribute('data-current-lang', lang);
-        }
-
-        // Toggle navigation visibility
-        if (navZh && navEn) {
-          if (lang === 'zh') {
-            navZh.style.display = 'block';
-            navEn.style.display = 'none';
-          } else {
-            navZh.style.display = 'none';
-            navEn.style.display = 'block';
-          }
-        }
-        
-        // Update navigation links to preserve language parameter
-        updateNavigationLinks(lang);
       }
 
       // Fix README markdown links to work with Jekyll
@@ -271,28 +377,9 @@
           });
         }
       }
-
-      // Update navigation links to preserve language parameter
-      function updateNavigationLinks(lang) {
-        const navLinks = document.querySelectorAll('.sidebar a');
-        navLinks.forEach(function(link) {
-          let href = link.getAttribute('href');
-          if (href && !href.startsWith('http')) {
-            // Remove any existing lang parameter
-            href = href.split('?')[0];
-            // Add lang parameter if not in Chinese mode
-            if (lang === 'en') {
-              href += '?lang=en';
-            }
-            link.setAttribute('href', href);
-          }
-        });
-      }
-
+      
       // Initial link fix
       fixMarkdownLinks();
-      // Initial navigation links update
-      updateNavigationLinks(currentLang);
     });
   </script>
 
